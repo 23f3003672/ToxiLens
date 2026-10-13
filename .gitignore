@@ -1,0 +1,19 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Data and models (must never be committed)
+data/raw/
+models/
+results/
+
+# Editor / OS settings
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
