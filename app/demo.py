@@ -49,8 +49,30 @@ if bundle is None:
 def render_table_safely(df: pd.DataFrame):
     try:
         st.dataframe(df, hide_index=True)
-    except Exception:
-        st.table(df)
+    except BaseException:
+        # Fallback to pure HTML table (100% independent of pyarrow)
+        html_table = df.to_html(index=False, escape=False)
+        style = """
+        <style>
+        .custom-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        .custom-table th, .custom-table td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+        .custom-table th {
+            background-color: #262730;
+            color: #fafafa;
+            font-weight: 600;
+        }
+        </style>
+        """
+        st.markdown(f"{style}<div class='custom-table'>{html_table}</div>", unsafe_allow_html=True)
 
 
 # Sidebar: Preset Molecules
