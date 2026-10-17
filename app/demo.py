@@ -45,6 +45,14 @@ if bundle is None:
     st.error("Model artifacts not found in `models/toxilens_bundle.joblib`. Run `python scripts/train_all.py` first.")
     st.stop()
 
+# Helper to render table safely across all pyarrow/streamlit configurations
+def render_table_safely(df: pd.DataFrame):
+    try:
+        st.dataframe(df, hide_index=True)
+    except Exception:
+        st.table(df)
+
+
 # Sidebar: Preset Molecules
 st.sidebar.header("Sample Compounds")
 PRESETS = {
@@ -80,7 +88,7 @@ col1, col2, col3, col4 = st.columns([1.5, 1, 1, 1])
 with col1:
     st.subheader("2D Chemical Structure")
     img = Draw.MolToImage(mol, size=(320, 260))
-    st.image(img, use_column_width=False)
+    st.image(img)
     st.caption(f"Canonical SMILES: `{canon_smiles}`")
 
 with col2:
@@ -153,7 +161,7 @@ with tab_pred:
         })
 
     results_table = pd.DataFrame(rows)
-    st.dataframe(results_table, use_container_width=True, hide_index=True)
+    render_table_safely(results_table)
 
     c_risk1, c_risk2 = st.columns(2)
     with c_risk1:
@@ -180,7 +188,7 @@ with tab_explain:
             highlightAtoms=highlight_atoms,
             legend="Highlighted Active Features",
         )
-        st.image(exp_img, use_column_width=False)
+        st.image(exp_img)
 
     with col_e2:
         alerts = explanation.get("detected_alerts", [])
@@ -207,6 +215,6 @@ with tab_similar:
                 "Tanimoto Similarity": f"{n['tanimoto_similarity']*100:.1f}%",
                 "Known Toxic Assays in Lab": ", ".join(n["known_toxic_endpoints"]) if n["known_toxic_endpoints"] else "None (Non-toxic)",
             })
-        st.dataframe(pd.DataFrame(sim_rows), use_container_width=True, hide_index=True)
+        render_table_safely(pd.DataFrame(sim_rows))
     else:
         st.write("No similar molecules found.")
