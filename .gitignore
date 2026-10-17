@@ -9,8 +9,7 @@ __pycache__/
 
 # Data and models (must never be committed)
 data/raw/
-models/
-results/
+/models/
 
 # Editor / OS settings
 .vscode/

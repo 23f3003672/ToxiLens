@@ -6,3 +6,11 @@ pillow==10.4.0
 pytest==8.3.2
 scikit-learn==1.5.1
 xgboost==2.1.1
+tabpfn
+torch
+torch-geometric
+fastapi
+uvicorn
+streamlit
+sentry-sdk
+requests

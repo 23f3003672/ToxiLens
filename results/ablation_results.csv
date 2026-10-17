@@ -1,0 +1,4 @@
+Model,Representation,AUROC,PR-AUC
+Random Forest,Morgan Fingerprints (1024b),0.7496,0.453
+TabPFN,Physicochemical Descriptors,0.7098,0.3016
+GIN (GNN),Molecular Graph (Atoms + Bonds),0.6455,0.24

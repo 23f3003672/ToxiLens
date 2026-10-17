@@ -1,0 +1,19 @@
+name,smiles,cas_number,category
+Cinnamaldehyde,c1ccccc1C=CC=O,104-55-2,Fragrance allergen
+Citral,CC(=CCCC(=CC=O)C)C,5392-40-5,Fragrance allergen
+Coumarin,c1ccc2c(c1)ccc(=O)o2,91-64-5,Fragrance allergen
+Eugenol,COc1cc(CC=C)ccc1O,97-53-0,Fragrance allergen
+Geraniol,CC(=CCCC(=CCO)C)C,106-24-1,Fragrance allergen
+Isoeugenol,COc1cc(C=CC)ccc1O,97-54-1,Fragrance allergen
+Limonene,CC1=CCC(CC1)C(=C)C,5989-27-5,Fragrance allergen
+Linalool,CC(=CCCC(C)(C=C)O)C,78-70-6,Fragrance allergen
+Hydroxycitronellal,CC(C(O)CCCC(C)CC=O)C,107-75-5,Fragrance allergen
+Amyl cinnamal,CCCCCC(=Cc1ccccc1)C=O,122-40-7,Fragrance allergen
+Benzyl alcohol,c1ccccc1CO,100-51-6,Preservative / Fragrance allergen
+Benzyl salicylate,c1ccc(c(c1)C(=O)OCc2ccccc2)O,118-58-1,Fragrance allergen
+Anise alcohol,COc1ccc(cc1)CO,105-13-5,Fragrance allergen
+Benzyl benzoate,c1ccccc1COC(=O)c2ccccc2,120-51-4,Fragrance allergen
+Farnesol,CC(=CCCC(=CCCC(=CCO)C)C)C,4602-84-0,Fragrance allergen
+Hexyl cinnamal,CCCCCCC(=Cc1ccccc1)C=O,101-86-0,Fragrance allergen
+Lilial,CC(Cc1ccc(cc1)C(C)(C)C)C=O,80-54-6,Banned fragrance allergen
+Oakmoss extract,CC1=C(C(=C(C(=C1C)O)C(=O)O)C)O,90028-68-5,Fragrance allergen
